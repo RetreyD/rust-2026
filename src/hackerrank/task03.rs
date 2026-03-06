@@ -1,12 +1,4 @@
 // https://www.hackerrank.com/challenges/staircase/problem
-use std::io::{self, BufRead};
-
-/*
- * Complete the 'staircase' function below.
- *
- * The function accepts INTEGER n as parameter.
- */
-
 fn staircase(n: i32) {
     for i in 1..=n {
         let spaces = (n - i) as usize;
@@ -17,11 +9,13 @@ fn staircase(n: i32) {
     }
 }
 
-fn main() {
-    let stdin = io::stdin();
-    let mut stdin_iterator = stdin.lock().lines();
+#[cfg(test)]
+mod test {
+    use super::*;
 
-    let n = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
-
-    staircase(n);
+    #[test]
+    fn test_staircase_4() {
+    
+        staircase(4);
+    }
 }
